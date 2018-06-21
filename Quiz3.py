@@ -1,3 +1,5 @@
+import math
+
 def dot(vector01,vector02):
 	'''
 	This function takes two vectors as it's arguments and returns the dot product of them. First
@@ -6,17 +8,18 @@ def dot(vector01,vector02):
 
 	'''
 
-	sum = 0
+	add = 0
 	if len(vector01) != len(vector02):
 		print("invalid input")
 
 	else:
 		for i in range(len(vector01)):
-			sum += (vector01[i] * vector02[i])
-		return sum
+			add += (vector01[i] * vector02[i])
+		return add
 
 
 #valid and invalid inputs to test and their respective tests commented out below.
+
 
 validInput1 = [1,1,1]
 validInput2 = [1,1,1]
@@ -43,13 +46,14 @@ def vecSubtract(vector03,vector04):
 
 	else:
 		for i in range(len(vector03)):
-			sum = vector03[i] - vector04[i]
-			newVec.append(sum)
+			sub = vector03[i] - vector04[i]
+			newVec.append(sub)
 	return newVec
 
 
 
 #valid and invalid inputs to test and their respective tests commented out below.
+
 
 validInput3 = [3,4,5]
 validInput4 = [1,1,1]
@@ -80,15 +84,47 @@ def scalarVecMulti(scalar01,vector05):
 		return newVec
 
 
+#valid and invalid inputs to test and their respective tests commented out below.
+
+
 validInput5 = 2
 validInput6 = [1,2,3]
 invalidInput5 = [1,1,1]
 invalidInput6 = 3
 
-#valid and invalid inputs to test and their respective tests commented out below.
-
 #print(scalarVecMulti(validInput5,validInput6))
 #print(scalarVecMulti(invalidInput5,invalidInput6))
+
+
+
+def infNorm(vector06):
+	'''
+	This function takes a vector as argument and returns the infinity norm of the vector. The if-else
+	statement makes sure the input is a vector and not a scalar. If the input is indeed a vector,
+	then we execute the following code, where sup is equal to the first element of vector06 and then
+	we iterate throughout the rest of the list comparing it to the following element, changing sup if 
+	the compared element is larger.
+
+	'''
+	if type(vector06) != list:
+		print("invalid input")
+	else:
+		sup = vector06[0]
+		for i in range(len(vector06)):
+			if sup < abs(vector06[i]):
+				sup = abs(vector06[i])
+		return sup
+
+
+#valid and invalid inputs to test and their respective tests commented out below.
+
+
+validInput7 = [3,7,5]
+invalidInput7 = 3
+
+#print(infNorm(validInput7))
+#print(infNorm(invalidInput7))
+
 
 
 
