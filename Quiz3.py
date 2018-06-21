@@ -22,7 +22,35 @@ validInput2 = [1,1,1]
 invalidInput1 =  [1,2,3]
 invalidInput2 = [1,2]
 
-print(dot(validInput1,validInput2))
+#print(dot(validInput1,validInput2))
 #print(dot(invalalidInput1,invalidInput2))
 
 
+
+
+
+def vecSubtract(vector03,vector04):
+	'''
+	This functions takes two vectors as arguments and returns a new vector with the respective subraction. 
+
+	'''
+	newVec = []
+	if len(vector03) != len(vector04):
+		print("invalid input")
+
+	else:
+		for i in range(len(vector03)):
+			sum = vector03[i] - vector04[i]
+			newVec.append(sum)
+	return newVec
+
+
+
+
+validInput3 = [3,4,5]
+validInput4 = [1,1,1]
+invalidInput3 = [2,2,2]
+invalidInput4 = [1,1]
+
+#print(vecSubtract(validInput3,validInput4))
+print(vecSubtract(invalidInput3,invalidInput4))
