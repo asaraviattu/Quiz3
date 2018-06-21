@@ -23,6 +23,6 @@ invalidInput1 =  [1,2,3]
 invalidInput2 = [1,2]
 
 print(dot(validInput1,validInput2))
-print(dot(invalalidInput1,invalidInput2))
+#print(dot(invalalidInput1,invalidInput2))
 
 
