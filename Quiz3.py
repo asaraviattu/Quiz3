@@ -26,7 +26,7 @@ validInput2 = [1,1,1]
 invalidInput1 =  [1,2,3]
 invalidInput2 = [1,2]
 
-#print(dot(validInput1,validInput2))
+print(dot(validInput1,validInput2))
 #print(dot(invalalidInput1,invalidInput2))
 
 
@@ -127,6 +127,32 @@ invalidInput7 = 3
 
 
 
+def normalize(vector07):
+	'''
+	This function takes a vector as its argument and returns the normalized vector with respect to 
+	the infinity norm. First we create a variable where we call the function infNorm but with vector07
+	as its respective input. Then we create an empty list. We check if the input is indeed a list and
+	if it is we execute the respective multiplication and append the results into the empty list.
+
+	'''
+	sup = infNorm(vector07)
+	newVec = []
+	if type(vector07) != list:
+		print("invalid input")
+	else:
+		for i in range(len(vector07)):
+			norm = (1.0/sup)*vector07[i]
+			newVec.append(norm)
+	return newVec
+
+#valid and invalid inputs to test and their respective tests commented out below.
+
+
+validInput8 = [2,4,6]
+invalidInput8 = 4
+
+#print(normalize(validInput8))
+#print(normalize(invalidInput8))
 
 
 
