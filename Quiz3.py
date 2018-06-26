@@ -137,10 +137,10 @@ def normalize(vector07):
 	'''
 	sup = infNorm(vector07)
 	newVec = []
-	if type(vector07) != list: 
+	if sup == 0 or sup == 1:
+		return vector07
+	elif type(vector07) != list: 
 		print("invalid input")
-	elif sup == 0:
-		print("invalid input, can't divide by 0")
 	else:
 		for i in range(len(vector07)):
 			norm = (1.0/sup)*vector07[i]
@@ -151,10 +151,12 @@ def normalize(vector07):
 
 
 validInput8 = [2,4,6]
-invalidInput8 = 4
+invalidInput8 = [0,0,0]
+invalidInput9 = 4
 
 #print(normalize(validInput8))
 #print(normalize(invalidInput8))
+#print(normalize(invalidInput9))
 
 
 
